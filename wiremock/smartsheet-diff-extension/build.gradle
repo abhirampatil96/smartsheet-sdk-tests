@@ -38,8 +38,38 @@ shadowJar {
     relocate "com.fasterxml.jackson.core", 'diffextension.com.fasterxml.jackson.core'
 }
 
-// Task to copy specific dependencies to libs folder
+// Task to copy specific dependencies to sdk_tests_package/libs folder
 task copyDependencies(type: Copy) {
+    from configurations.runtimeClasspath
+    into '../../sdk_tests_package/libs'
+    include '**/wiremock-standalone-*.jar'
+    include '**/jaxb-api-*.jar'
+    include '**/jaxb-core-*.jar'
+    include '**/jaxb-impl-*.jar'
+
+    // Rename jaxb-impl to jaxb-runtime for consistency with requirements
+    rename 'jaxb-impl-(.*).jar', 'jaxb-runtime-$1.jar'
+
+    doFirst {
+        // Create the target directory if it doesn't exist
+        file('../../sdk_tests_package/libs').mkdirs()
+    }
+}
+
+// Task to copy the built diff-extension jar to sdk_tests_package/libs folder
+task copyBuiltJar(type: Copy, dependsOn: shadowJar) {
+    from 'build/libs'
+    into '../../sdk_tests_package/libs'
+    include 'diff-extension.jar'
+
+    doFirst {
+        // Create the target directory if it doesn't exist
+        file('../../sdk_tests_package/libs').mkdirs()
+    }
+}
+
+// Task to copy specific dependencies to local libs folder (for backwards compatibility)
+task copyDependenciesLocal(type: Copy) {
     from configurations.runtimeClasspath
     into 'libs'
     include '**/wiremock-standalone-*.jar'
@@ -51,18 +81,22 @@ task copyDependencies(type: Copy) {
     rename 'jaxb-impl-(.*).jar', 'jaxb-runtime-$1.jar'
 }
 
-// Task to copy the built diff-extension jar to libs folder
-task copyBuiltJar(type: Copy, dependsOn: shadowJar) {
+// Task to copy the built diff-extension jar to local libs folder (for backwards compatibility)
+task copyBuiltJarLocal(type: Copy, dependsOn: shadowJar) {
     from 'build/libs'
     into 'libs'
     include 'diff-extension.jar'
 }
 
 // Main task to build and package all required dependencies
-task packageLibs(dependsOn: [clean, shadowJar, copyDependencies, copyBuiltJar]) {
+task packageLibs(dependsOn: [clean, shadowJar, copyDependenciesLocal, copyBuiltJarLocal]) {
     description = 'Builds the extension and copies all required dependencies to libs folder'
     group = 'build'
 }
 
-// Ensure copyBuiltJar runs after copyDependencies
+// Ensure copyBuiltJarLocal runs after copyDependenciesLocal
+copyBuiltJarLocal.mustRunAfter copyDependenciesLocal
+
+// Make shadowJar automatically copy to sdk_tests_package/libs
+shadowJar.finalizedBy copyDependencies, copyBuiltJar
 copyBuiltJar.mustRunAfter copyDependencies
