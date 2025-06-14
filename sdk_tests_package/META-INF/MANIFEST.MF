@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: wiremock.Run
+Add-Exports: java.base/sun.security.x509
+

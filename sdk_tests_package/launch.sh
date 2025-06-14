@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-MAIN_CLASS='com.github.tomakehurst.wiremock.standalone.WireMockServerRunner'
+MAIN_CLASS='wiremock.Run'
 
 EXTENSION='ApiScenarioTransformer'
 
