@@ -1,0 +1,35 @@
+{
+  "request": {
+    "urlPathPattern": "/workspaces/123/metadata\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "Get Workspace Metadata - Include Source"
+      }
+    },
+    "queryParameters": {
+      "include": {
+        "equalTo": "source"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "id": 123,
+      "name": "Sample Workspace",
+      "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+      "createdAt": "2023-01-15T10:30:00Z",
+      "modifiedAt": "2023-06-20T14:45:30Z",
+      "accessLevel": "ADMIN",
+      "source": {
+        "id": 999,
+        "type": "workspace"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

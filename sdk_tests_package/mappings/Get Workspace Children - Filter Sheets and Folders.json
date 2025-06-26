@@ -1,0 +1,53 @@
+{
+  "request": {
+    "urlPathPattern": "/workspaces/123/children\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "Get Workspace Children - Filter Sheets and Folders"
+      }
+    },
+    "queryParameters": {
+      "childrenResourceTypes": {
+        "matches": "(sheets,folders|folders,sheets)"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 456,
+          "name": "Project Folder",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-02-10T09:15:00Z",
+          "modifiedAt": "2023-05-18T16:20:45Z",
+          "resourceType": "folder"
+        },
+        {
+          "id": 789,
+          "name": "Budget Sheet",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-03-05T11:30:00Z",
+          "modifiedAt": "2023-06-15T13:45:30Z",
+          "accessLevel": "EDITOR",
+          "resourceType": "sheet"
+        },
+        {
+          "id": 1234,
+          "name": "Project Timeline",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-04-10T08:20:00Z",
+          "modifiedAt": "2023-06-18T16:30:45Z",
+          "accessLevel": "EDITOR",
+          "resourceType": "sheet"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "request": {
+    "urlPathPattern": "/folders/456/metadata\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "Get Folder Metadata - No Params"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "id": 456,
+      "name": "Project Folder",
+      "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+      "createdAt": "2023-02-10T09:15:00Z",
+      "modifiedAt": "2023-05-18T16:20:45Z"
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}
