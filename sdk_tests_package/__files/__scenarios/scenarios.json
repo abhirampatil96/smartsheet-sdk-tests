@@ -6420,5 +6420,71 @@
         "Content-Type": "application/json;charset=UTF-8"
       }
     }
+  },
+  {
+    "scenario": "Get Folder Children - MaxItems and LastKey",
+    "description": "Gets children of a folder with maxItems and lastKey query parameters for pagination",
+    "request": {
+      "method": "GET",
+      "urlPath": "/folders/456/children",
+      "queryParameters": {
+        "maxItems": "100",
+        "lastKey": "aslkjf4wlkta4n4900sjfklf499sjwlk4356lkj"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 567,
+            "name": "Project Dashboard",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-20T13:30:00Z",
+            "modifiedAt": "2023-06-25T11:45:15Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sight"
+          }
+        ],
+        "lastKey": "xvmnw4mnx8v9wriot20574xvnjoqt4iuhnow490"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Workspace Children - MaxItems and LastKey",
+    "description": "Gets children of a workspace with maxItems and lastKey query parameters for pagination",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces/123/children",
+      "queryParameters": {
+        "maxItems": "1000",
+        "lastKey": "aslkjf4wlkta4n4900sjfklf499sjwlk4356lkj"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 789,
+            "name": "Budget Sheet",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-03-05T11:30:00Z",
+            "modifiedAt": "2023-06-15T13:45:30Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sheet"
+          }
+        ],
+        "lastKey": "xvmnw4mnx8v9wriot20574xvnjoqt4iuhnow490"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
   }
 ]
