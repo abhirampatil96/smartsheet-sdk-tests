@@ -6486,5 +6486,155 @@
         "Content-Type": "application/json;charset=UTF-8"
       }
     }
+  },
+  {
+    "scenario": "List Workspaces - First Page with Pagination",
+    "description": "Gets first page of workspaces with maxItems parameter. Returns workspaces with lastKey for pagination.",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces",
+      "queryParameters": {
+        "paginationType": "token",
+        "maxItems": "100"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 100,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 1001,
+            "name": "Marketing Workspace",
+            "accessLevel": "OWNER",
+            "permalink": "https://app.smartsheet.com/workspaces/1001"
+          },
+          {
+            "id": 1002,
+            "name": "Sales Workspace",
+            "accessLevel": "ADMIN",
+            "permalink": "https://app.smartsheet.com/workspaces/1002"
+          }
+        ],
+        "lastKey": "eyJsYXN0SWQiOjEwMDJ9"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "List Workspaces - Middle Page with Pagination",
+    "description": "Gets middle page of workspaces using lastKey and maxItems parameters. Returns workspaces with lastKey for pagination.",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces",
+      "queryParameters": {
+        "paginationType": "token",
+        "lastKey": "eyJsYXN0SWQiOjEwMDJ9",
+        "maxItems": "100"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 1003,
+            "name": "Engineering Workspace",
+            "accessLevel": "EDITOR",
+            "permalink": "https://app.smartsheet.com/workspaces/1003"
+          },
+          {
+            "id": 1004,
+            "name": "HR Workspace",
+            "accessLevel": "VIEWER",
+            "permalink": "https://app.smartsheet.com/workspaces/1004"
+          }
+        ],
+        "lastKey": "eyJsYXN0SWQiOjEwMDJ9"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "List Workspaces - Final Page with Pagination",
+    "description": "Gets final page of workspaces using lastKey parameter. Returns remaining workspaces with no lastKey.",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces",
+      "queryParameters": {
+        "paginationType": "token",
+        "lastKey": "eyJsYXN0SWQiOjEwMDR9",
+        "maxItems": "100"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 1005,
+            "name": "Compliance Workspace",
+            "accessLevel": "VIEWER",
+            "permalink": "https://app.smartsheet.com/workspaces/1005"
+          }
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "List Workspaces - No Pagination Parameters",
+    "description": "Gets all workspaces without pagination parameters. Returns all workspaces without pagination tokens.",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces"
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "pageNumber": 1,
+        "pageSize": 5,
+        "totalPages": 1,
+        "totalCount": 5,
+        "data": [
+          {
+            "id": 1001,
+            "name": "Marketing Workspace",
+            "accessLevel": "OWNER",
+            "permalink": "https://app.smartsheet.com/b/home?lx=marketing"
+          },
+          {
+            "id": 1002,
+            "name": "Sales Workspace",
+            "accessLevel": "ADMIN",
+            "permalink": "https://app.smartsheet.com/b/home?lx=sales"
+          },
+          {
+            "id": 1003,
+            "name": "Engineering Workspace",
+            "accessLevel": "EDITOR",
+            "permalink": "https://app.smartsheet.com/b/home?lx=engineering"
+          },
+          {
+            "id": 1004,
+            "name": "HR Workspace",
+            "accessLevel": "VIEWER",
+            "permalink": "https://app.smartsheet.com/b/home?lx=hr"
+          }
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
   }
 ]

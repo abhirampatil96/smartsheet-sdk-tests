@@ -1,0 +1,46 @@
+{
+  "request": {
+    "urlPathPattern": "/workspaces\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "List Workspaces - Middle Page with Pagination"
+      }
+    },
+    "queryParameters": {
+      "paginationType": {
+        "equalTo": "token"
+      },
+      "lastKey": {
+        "equalTo": "eyJsYXN0SWQiOjEwMDJ9"
+      },
+      "maxItems": {
+        "equalTo": "100"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 1003,
+          "name": "Engineering Workspace",
+          "accessLevel": "EDITOR",
+          "permalink": "https://app.smartsheet.com/workspaces/1003"
+        },
+        {
+          "id": 1004,
+          "name": "HR Workspace",
+          "accessLevel": "VIEWER",
+          "permalink": "https://app.smartsheet.com/workspaces/1004"
+        }
+      ],
+      "lastKey": "eyJsYXN0SWQiOjEwMDJ9"
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "request": {
+    "urlPathPattern": "/workspaces\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "List Workspaces - No Pagination Parameters"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "pageNumber": 1,
+      "pageSize": 5,
+      "totalPages": 1,
+      "totalCount": 5,
+      "data": [
+        {
+          "id": 1001,
+          "name": "Marketing Workspace",
+          "accessLevel": "OWNER",
+          "permalink": "https://app.smartsheet.com/workspaces/1001"
+        },
+        {
+          "id": 1002,
+          "name": "Sales Workspace",
+          "accessLevel": "ADMIN",
+          "permalink": "https://app.smartsheet.com/workspaces/1002"
+        },
+        {
+          "id": 1003,
+          "name": "Engineering Workspace",
+          "accessLevel": "EDITOR",
+          "permalink": "https://app.smartsheet.com/workspaces/1003"
+        },
+        {
+          "id": 1004,
+          "name": "HR Workspace",
+          "accessLevel": "VIEWER",
+          "permalink": "https://app.smartsheet.com/workspaces/1004"
+        },
+        {
+          "id": 1005,
+          "name": "Compliance Workspace",
+          "accessLevel": "VIEWER",
+          "permalink": "https://app.smartsheet.com/workspaces/1005"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}
