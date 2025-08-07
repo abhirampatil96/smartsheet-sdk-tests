@@ -5957,5 +5957,534 @@
         "Content-Type": "application/json;charset=UTF-8"
       }
     }
+  },
+  {
+    "scenario": "Get Workspace Metadata - No Params",
+    "description": "Gets metadata of a workspace without query parameters",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces/123/metadata"
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "id": 123,
+        "name": "Sample Workspace",
+        "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+        "createdAt": "2023-01-15T10:30:00Z",
+        "modifiedAt": "2023-06-20T14:45:30Z",
+        "accessLevel": "VIEWER"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Workspace Metadata - Include Source",
+    "description": "Gets metadata of a workspace with source parameter",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces/123/metadata",
+      "queryParameters": {
+        "include": "source"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "id": 123,
+        "name": "Sample Workspace",
+        "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+        "createdAt": "2023-01-15T10:30:00Z",
+        "modifiedAt": "2023-06-20T14:45:30Z",
+        "accessLevel": "ADMIN",
+        "source": {
+          "id": 999,
+          "type": "workspace"
+        }
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Workspace Children - No Params",
+    "description": "Gets children of a workspace without query parameters",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces/123/children"
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 456,
+            "name": "Project Folder",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-02-10T09:15:00Z",
+            "modifiedAt": "2023-05-18T16:20:45Z",
+            "resourceType": "folder"
+          },
+          {
+            "id": 789,
+            "name": "Budget Sheet",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-03-05T11:30:00Z",
+            "modifiedAt": "2023-06-15T13:45:30Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sheet"
+          },
+          {
+            "id": 321,
+            "name": "Dashboard Overview",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-12T14:20:00Z",
+            "modifiedAt": "2023-06-22T10:30:15Z",
+            "accessLevel": "VIEWER",
+            "resourceType": "sight"
+          },
+          {
+            "id": 654,
+            "name": "Monthly Report",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-01-25T08:45:00Z",
+            "modifiedAt": "2023-06-18T17:10:30Z",
+            "accessLevel": "ADMIN",
+            "resourceType": "report"
+          }
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Workspace Children - Include Source and OwnerInfo",
+    "description": "Gets children of a workspace with source and ownerInfo parameters",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces/123/children",
+      "queryParameters": {
+        "include": "source,ownerInfo"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 456,
+            "name": "Project Folder",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-02-10T09:15:00Z",
+            "modifiedAt": "2023-05-18T16:20:45Z",
+            "resourceType": "folder",
+            "source": {
+              "id": 888,
+              "type": "folder"
+            }
+          },
+          {
+            "id": 789,
+            "name": "Budget Sheet",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-03-05T11:30:00Z",
+            "modifiedAt": "2023-06-15T13:45:30Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sheet",
+            "source": {
+              "id": 777,
+              "type": "sheet"
+            },
+            "ownerInfo": {
+              "ownerId": 1001,
+              "owner": "john.doe@example.com"
+            }
+          },
+          {
+            "id": 321,
+            "name": "Dashboard Overview",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-12T14:20:00Z",
+            "modifiedAt": "2023-06-22T10:30:15Z",
+            "accessLevel": "VIEWER",
+            "resourceType": "sight",
+            "source": {
+              "id": 666,
+              "type": "sight"
+            }
+          },
+          {
+            "id": 654,
+            "name": "Monthly Report",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-01-25T08:45:00Z",
+            "modifiedAt": "2023-06-18T17:10:30Z",
+            "accessLevel": "ADMIN",
+            "resourceType": "report",
+            "source": {
+              "id": 555,
+              "type": "report"
+            }
+          }
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Workspace Children - Filter Sheets and Folders",
+    "description": "Gets children of a workspace filtered by sheets and folders resource types",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces/123/children",
+      "queryParameters": {
+        "childrenResourceTypes": "folders,sheets"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 456,
+            "name": "Project Folder",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-02-10T09:15:00Z",
+            "modifiedAt": "2023-05-18T16:20:45Z",
+            "resourceType": "folder"
+          },
+          {
+            "id": 789,
+            "name": "Budget Sheet",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-03-05T11:30:00Z",
+            "modifiedAt": "2023-06-15T13:45:30Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sheet"
+          },
+          {
+            "id": 1234,
+            "name": "Project Timeline",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-10T08:20:00Z",
+            "modifiedAt": "2023-06-18T16:30:45Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sheet"
+          }
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Folder Metadata - No Params",
+    "description": "Gets metadata of a folder without query parameters",
+    "request": {
+      "method": "GET",
+      "urlPath": "/folders/456/metadata"
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "id": 456,
+        "name": "Project Folder",
+        "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+        "createdAt": "2023-02-10T09:15:00Z",
+        "modifiedAt": "2023-05-18T16:20:45Z"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Folder Metadata - Include Source",
+    "description": "Gets metadata of a folder with source parameter",
+    "request": {
+      "method": "GET",
+      "urlPath": "/folders/456/metadata",
+      "queryParameters": {
+        "include": "source"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "id": 456,
+        "name": "Project Folder",
+        "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+        "createdAt": "2023-02-10T09:15:00Z",
+        "modifiedAt": "2023-05-18T16:20:45Z",
+        "source": {
+          "id": 888,
+          "type": "folder"
+        }
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Folder Children - No Params",
+    "description": "Gets children of a folder without query parameters",
+    "request": {
+      "method": "GET",
+      "urlPath": "/folders/456/children"
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 987,
+            "name": "Subfolder",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-03-15T12:00:00Z",
+            "modifiedAt": "2023-06-10T09:30:00Z",
+            "resourceType": "folder"
+          },
+          {
+            "id": 234,
+            "name": "Task List",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-01T10:45:00Z",
+            "modifiedAt": "2023-06-20T15:15:30Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sheet"
+          },
+          {
+            "id": 567,
+            "name": "Project Dashboard",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-20T13:30:00Z",
+            "modifiedAt": "2023-06-25T11:45:15Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sight"
+          },
+          {
+            "id": 890,
+            "name": "Status Report",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-02-28T16:20:00Z",
+            "modifiedAt": "2023-06-12T14:10:45Z",
+            "accessLevel": "VIEWER",
+            "resourceType": "report"
+          }
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Folder Children - Include Source and OwnerInfo",
+    "description": "Gets children of a folder with source and ownerInfo parameters",
+    "request": {
+      "method": "GET",
+      "urlPath": "/folders/456/children",
+      "queryParameters": {
+        "include": "source,ownerInfo"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 987,
+            "name": "Subfolder",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-03-15T12:00:00Z",
+            "modifiedAt": "2023-06-10T09:30:00Z",
+            "resourceType": "folder",
+            "source": {
+              "id": 444,
+              "type": "folder"
+            }
+          },
+          {
+            "id": 234,
+            "name": "Task List",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-01T10:45:00Z",
+            "modifiedAt": "2023-06-20T15:15:30Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sheet",
+            "source": {
+              "id": 333,
+              "type": "sheet"
+            },
+            "ownerInfo": {
+              "ownerId": 2002,
+              "owner": "jane.smith@example.com"
+            }
+          },
+          {
+            "id": 567,
+            "name": "Project Dashboard",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-20T13:30:00Z",
+            "modifiedAt": "2023-06-25T11:45:15Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sight",
+            "source": {
+              "id": 222,
+              "type": "sight"
+            }
+          },
+          {
+            "id": 890,
+            "name": "Status Report",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-02-28T16:20:00Z",
+            "modifiedAt": "2023-06-12T14:10:45Z",
+            "accessLevel": "VIEWER",
+            "resourceType": "report",
+            "source": {
+              "id": 111,
+              "type": "report"
+            }
+          }
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Folder Children - Filter Sights and Reports",
+    "description": "Gets children of a folder filtered by sights and reports resource types",
+    "request": {
+      "method": "GET",
+      "urlPath": "/folders/456/children",
+      "queryParameters": {
+        "childrenResourceTypes": "reports,sights"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 567,
+            "name": "Project Dashboard",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-20T13:30:00Z",
+            "modifiedAt": "2023-06-25T11:45:15Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sight"
+          },
+          {
+            "id": 1567,
+            "name": "Executive Summary",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-05-15T09:20:00Z",
+            "modifiedAt": "2023-06-22T14:10:30Z",
+            "accessLevel": "VIEWER",
+            "resourceType": "sight"
+          },
+          {
+            "id": 890,
+            "name": "Status Report",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-02-28T16:20:00Z",
+            "modifiedAt": "2023-06-12T14:10:45Z",
+            "accessLevel": "VIEWER",
+            "resourceType": "report"
+          }
+        ]
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Folder Children - MaxItems and LastKey",
+    "description": "Gets children of a folder with maxItems and lastKey query parameters for pagination",
+    "request": {
+      "method": "GET",
+      "urlPath": "/folders/456/children",
+      "queryParameters": {
+        "maxItems": "100",
+        "lastKey": "aslkjf4wlkta4n4900sjfklf499sjwlk4356lkj"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 567,
+            "name": "Project Dashboard",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-04-20T13:30:00Z",
+            "modifiedAt": "2023-06-25T11:45:15Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sight"
+          }
+        ],
+        "lastKey": "xvmnw4mnx8v9wriot20574xvnjoqt4iuhnow490"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
+  },
+  {
+    "scenario": "Get Workspace Children - MaxItems and LastKey",
+    "description": "Gets children of a workspace with maxItems and lastKey query parameters for pagination",
+    "request": {
+      "method": "GET",
+      "urlPath": "/workspaces/123/children",
+      "queryParameters": {
+        "maxItems": "1000",
+        "lastKey": "aslkjf4wlkta4n4900sjfklf499sjwlk4356lkj"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "data": [
+          {
+            "id": 789,
+            "name": "Budget Sheet",
+            "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+            "createdAt": "2023-03-05T11:30:00Z",
+            "modifiedAt": "2023-06-15T13:45:30Z",
+            "accessLevel": "EDITOR",
+            "resourceType": "sheet"
+          }
+        ],
+        "lastKey": "xvmnw4mnx8v9wriot20574xvnjoqt4iuhnow490"
+      },
+      "headers": {
+        "Content-Type": "application/json;charset=UTF-8"
+      }
+    }
   }
 ]

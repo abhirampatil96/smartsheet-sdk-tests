@@ -1,0 +1,80 @@
+{
+  "request": {
+    "urlPathPattern": "/workspaces/123/children\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "Get Workspace Children - Include Source and OwnerInfo"
+      }
+    },
+    "queryParameters": {
+      "include": {
+        "equalTo": "source,ownerInfo"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 456,
+          "name": "Project Folder",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-02-10T09:15:00Z",
+          "modifiedAt": "2023-05-18T16:20:45Z",
+          "resourceType": "folder",
+          "source": {
+            "id": 888,
+            "type": "folder"
+          }
+        },
+        {
+          "id": 789,
+          "name": "Budget Sheet",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-03-05T11:30:00Z",
+          "modifiedAt": "2023-06-15T13:45:30Z",
+          "accessLevel": "EDITOR",
+          "resourceType": "sheet",
+          "source": {
+            "id": 777,
+            "type": "sheet"
+          },
+          "ownerId": 1001,
+          "owner": "john.doe@example.com"
+        },
+        {
+          "id": 321,
+          "name": "Dashboard Overview",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-04-12T14:20:00Z",
+          "modifiedAt": "2023-06-22T10:30:15Z",
+          "accessLevel": "VIEWER",
+          "resourceType": "sight",
+          "source": {
+            "id": 666,
+            "type": "sight"
+          }
+        },
+        {
+          "id": 654,
+          "name": "Monthly Report",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-01-25T08:45:00Z",
+          "modifiedAt": "2023-06-18T17:10:30Z",
+          "accessLevel": "ADMIN",
+          "resourceType": "report",
+          "source": {
+            "id": 555,
+            "type": "report"
+          }
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}
