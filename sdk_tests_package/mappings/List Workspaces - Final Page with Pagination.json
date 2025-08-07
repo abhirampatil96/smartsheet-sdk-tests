@@ -1,0 +1,39 @@
+{
+  "request": {
+    "urlPathPattern": "/workspaces\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "List Workspaces - Final Page with Pagination"
+      }
+    },
+    "queryParameters": {
+      "paginationType": {
+        "equalTo": "token"
+      },
+      "lastKey": {
+        "equalTo": "eyJsYXN0SWQiOjEwMDR9"
+      },
+      "maxItems": {
+        "equalTo": "100"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 1005,
+          "name": "Compliance Workspace",
+          "accessLevel": "VIEWER",
+          "permalink": "https://app.smartsheet.com/workspaces/1005"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

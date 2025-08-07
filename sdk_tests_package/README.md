@@ -17,7 +17,17 @@ This will launch a fully configured WireMock server running on port 8082.
 
 ## How to Use
 
-The scenarios listed in the scenario section below can be called as specified. For example, the 'List Sheets' endpoint can be called by making a GET request to http://localhost:8082/sheets.
+The scenarios listed in the scenario section below can be called as specified. **Important: Each request must include an `Api-Scenario` header** that specifies which scenario to use.
+
+### Example Usage
+
+```bash
+# Basic request format
+curl -H "Api-Scenario: <scenario-name>" http://localhost:8082/<endpoint>
+
+# Example: List Sheets
+curl -H "Api-Scenario: List Sheets - No Params" http://localhost:8082/sheets
+```
 
 # Configured Scenarios
 * [List Automation Rules](#list-automation-rules)
@@ -102,6 +112,10 @@ The scenarios listed in the scenario section below can be called as specified. F
 * [Delete Sight](#delete-sight)
 * [Deactivate user](#deactivate-user)
 * [Reactivate user](#reactivate-user)
+* [List Workspaces - First Page with Pagination](#list-workspaces---first-page-with-pagination)
+* [List Workspaces - Middle Page with Pagination](#list-workspaces---middle-page-with-pagination)
+* [List Workspaces - Final Page with Pagination](#list-workspaces---final-page-with-pagination)
+* [List Workspaces - No Pagination Parameters](#list-workspaces---no-pagination-parameters)
 
 ## List Automation Rules
 
@@ -6439,5 +6453,164 @@ Reactivates a user in an organization account.
 {
   "message": "SUCCESS",
   "resultCode": 0
+}
+```
+
+## List Workspaces - First Page with Pagination
+
+Gets first page of workspaces with maxItems parameter. Returns workspaces with lastKey for pagination.
+
+### Expected Request
+
+#### GET - /workspaces
+
+#### Query Parameters
+
+* paginationType: token
+* maxItems: 100
+
+### Response
+
+#### Status - 200 OK
+
+```json
+{
+  "data": [
+    {
+      "id": 1001,
+      "name": "Marketing Workspace",
+      "accessLevel": "OWNER",
+      "permalink": "https://app.smartsheet.com/workspaces/1001"
+    },
+    {
+      "id": 1002,
+      "name": "Sales Workspace",
+      "accessLevel": "ADMIN",
+      "permalink": "https://app.smartsheet.com/workspaces/1002"
+    }
+  ],
+  "lastKey": "eyJsYXN0SWQiOjEwMDJ9"
+}
+```
+
+## List Workspaces - Middle Page with Pagination
+
+Gets middle page of workspaces using lastKey and maxItems parameters. Returns workspaces with lastKey for pagination.
+
+### Expected Request
+
+#### GET - /workspaces
+
+#### Query Parameters
+
+* paginationType: token
+* lastKey: eyJsYXN0SWQiOjEwMDJ9
+* maxItems: 100
+
+### Response
+
+#### Status - 200 OK
+
+```json
+{
+  "data": [
+    {
+      "id": 1003,
+      "name": "Engineering Workspace",
+      "accessLevel": "EDITOR",
+      "permalink": "https://app.smartsheet.com/workspaces/1003"
+    },
+    {
+      "id": 1004,
+      "name": "HR Workspace",
+      "accessLevel": "VIEWER",
+      "permalink": "https://app.smartsheet.com/workspaces/1004"
+    }
+  ],
+  "lastKey": "eyJsYXN0SWQiOjEwMDJ9"
+}
+```
+
+## List Workspaces - Final Page with Pagination
+
+Gets final page of workspaces using lastKey parameter. Returns remaining workspaces with no lastKey.
+
+### Expected Request
+
+#### GET - /workspaces
+
+#### Query Parameters
+
+* paginationType: token
+* lastKey: eyJsYXN0SWQiOjEwMDR9
+* maxItems: 100
+
+### Response
+
+#### Status - 200 OK
+
+```json
+{
+  "data": [
+     {
+        "id": 1005,
+        "name": "Compliance Workspace",
+        "accessLevel": "VIEWER",
+        "permalink": "https://app.smartsheet.com/workspaces/1005"
+     }
+  ]
+}
+```
+
+## List Workspaces - No Pagination Parameters
+
+Gets all workspaces without pagination parameters. Returns all workspaces without pagination tokens.
+
+### Expected Request
+
+#### GET - /workspaces
+
+### Response
+
+#### Status - 200 OK
+
+```json
+{
+  "pageNumber": 1,
+  "pageSize": 5,
+  "totalPages": 1,
+  "totalCount": 5,
+  "data": [
+    {
+      "id": 1001,
+      "name": "Marketing Workspace",
+      "accessLevel": "OWNER",
+      "permalink": "https://app.smartsheet.com/workspaces/1001"
+    },
+    {
+      "id": 1002,
+      "name": "Sales Workspace",
+      "accessLevel": "ADMIN",
+      "permalink": "https://app.smartsheet.com/workspaces/1002"
+    },
+    {
+      "id": 1003,
+      "name": "Engineering Workspace",
+      "accessLevel": "EDITOR",
+      "permalink": "https://app.smartsheet.com/workspaces/1003"
+    },
+    {
+      "id": 1004,
+      "name": "HR Workspace",
+      "accessLevel": "VIEWER",
+      "permalink": "https://app.smartsheet.com/workspaces/1004"
+    }, 
+    {
+      "id": 1005,
+      "name": "Compliance Workspace",
+      "accessLevel": "VIEWER",
+      "permalink": "https://app.smartsheet.com/workspaces/1005"
+    }
+  ]
 }
 ```

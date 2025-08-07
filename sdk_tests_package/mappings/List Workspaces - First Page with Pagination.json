@@ -1,0 +1,43 @@
+{
+  "request": {
+    "urlPathPattern": "/workspaces\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "List Workspaces - First Page with Pagination"
+      }
+    },
+    "queryParameters": {
+      "paginationType": {
+        "equalTo": "token"
+      },
+      "maxItems": {
+        "equalTo": "100"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 1001,
+          "name": "Marketing Workspace",
+          "accessLevel": "OWNER",
+          "permalink": "https://app.smartsheet.com/workspaces/1001"
+        },
+        {
+          "id": 1002,
+          "name": "Sales Workspace",
+          "accessLevel": "ADMIN",
+          "permalink": "https://app.smartsheet.com/workspaces/1002"
+        }
+      ],
+      "lastKey": "eyJsYXN0SWQiOjEwMDJ9"
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}
