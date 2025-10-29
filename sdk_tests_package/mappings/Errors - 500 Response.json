@@ -1,7 +1,6 @@
 {
   "request": {
     "urlPathPattern": ".*",
-    "method": "GET",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"

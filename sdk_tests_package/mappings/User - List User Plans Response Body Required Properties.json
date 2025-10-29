@@ -1,6 +1,6 @@
 {
   "request": {
-    "urlPathPattern": "/2.0/users/[0-9]+/plans",
+    "urlPathTemplate": "/2.0/users/{userId}/plans",
     "method": "GET",
     "headers": {
       "Authorization": {
