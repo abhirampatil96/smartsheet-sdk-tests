@@ -33,8 +33,8 @@
           "name": "Test User",
           "profileImage": {
             "imageId": "u!1!nAtdn5RJB_o!k6_e_3h2R3w!wmYXPek-yVD",
-            "height": "1050",
-            "width": "1050"
+            "height": 1050,
+            "width": 1050
           },
           "resourceViewer": true,
           "seatType": "MEMBER",
