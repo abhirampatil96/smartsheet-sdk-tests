@@ -1,0 +1,35 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/users/{userId}/alternateemails/{alternateEmailId}/makeprimary",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/users/alternate-emails/make-alternate-email-primary/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "data": [
+        {
+          "id": 9876543210987654,
+          "confirmed": true,
+          "email": "alternate.email@smartsheet.com"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

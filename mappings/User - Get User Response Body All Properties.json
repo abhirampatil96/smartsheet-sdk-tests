@@ -1,0 +1,64 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/users/{userId}",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/users/get-user/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "id": 12345678,
+      "account": {
+        "id": 9876543210987654,
+        "name": "Acme Corporation"
+      },
+      "admin": true,
+      "alternateEmails": [
+        {
+          "id": 9876543210987654,
+          "confirmed": true,
+          "email": "alternate.email@smartsheet.com"
+        }
+      ],
+      "company": "Acme Corporation",
+      "customWelcomeScreenViewed": "2020-08-25T12:15:47Z",
+      "department": "Engineering",
+      "email": "test.user@smartsheet.com",
+      "firstName": "Test",
+      "groupAdmin": true,
+      "jiraAdmin": false,
+      "lastLogin": "2020-10-04T18:32:47Z",
+      "lastName": "User",
+      "licensedSheetCreator": true,
+      "locale": "en_US",
+      "mobilePhone": "+1234567890",
+      "profileImage": {
+        "imageId": "u!1!nAtdn5RJB_o!k6_e_3h2R3w!wmYXPek-yVD",
+        "height": 1050,
+        "width": 1050
+      },
+      "resourceViewer": false,
+      "role": "Senior Developer",
+      "salesforceAdmin": false,
+      "salesforceUser": false,
+      "sheetCount": -1,
+      "timeZone": "US/Pacific",
+      "title": "Senior Software Engineer",
+      "workPhone": "+1234567890"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
