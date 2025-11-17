@@ -41,7 +41,7 @@
         "resourceViewer": false,
         "seatType": "MEMBER",
         "seatTypeLastChangedAt": "2025-01-01T00:00:00.123456789Z",
-        "sheetCount": 1,
+        "sheetCount": -1,
         "status": "ACTIVE"
       }
     },

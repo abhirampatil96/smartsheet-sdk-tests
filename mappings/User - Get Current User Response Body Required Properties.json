@@ -38,7 +38,7 @@
       "role": "System Admin",
       "salesforceAdmin": false,
       "salesforceUser": false,
-      "sheetCount": 1,
+      "sheetCount": -1,
       "timeZone": "US/Pacific",
       "title": "Senior Engineer",
       "workPhone": "+1234567890",
