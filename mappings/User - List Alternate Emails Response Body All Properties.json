@@ -1,0 +1,37 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/users/{userId}/alternateemails",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/users/alternate-emails/list-alternate-emails/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 9876543210987654,
+          "confirmed": true,
+          "email": "alternate.email@smartsheet.com"
+        }
+      ],
+      "pageNumber": 1,
+      "pageSize": 100,
+      "totalPages": 1,
+      "totalCount": 1
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
