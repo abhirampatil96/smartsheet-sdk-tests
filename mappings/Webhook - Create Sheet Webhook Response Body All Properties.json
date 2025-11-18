@@ -21,17 +21,6 @@
       "message": "SUCCESS",
       "resultCode": 0,
       "version": 1,
-      "failedItems": [
-        {
-          "rowId": 0,
-          "error": {
-            "refId": "abc123",
-            "errorCode": 1234,
-            "message": "Sample error message"
-          },
-          "index": 0
-        }
-      ],
       "result": {
         "id": 4012345678901234,
         "name": "Test Webhook",

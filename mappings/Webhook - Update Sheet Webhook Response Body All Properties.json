@@ -21,7 +21,6 @@
       "message": "SUCCESS",
       "resultCode": 0,
       "version": 1,
-      "failedItems": [],
       "result": {
         "id": 4012345678901234,
         "name": "Test Webhook",
