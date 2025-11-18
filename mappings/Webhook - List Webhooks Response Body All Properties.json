@@ -1,0 +1,83 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/webhooks",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/webhooks/list-webhooks/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "pageNumber": 1,
+      "pageSize": 100,
+      "totalPages": 1,
+      "totalCount": 2,
+      "data": [
+        {
+          "id": 4012345678901234,
+          "name": "Test Webhook",
+          "callbackUrl": "https://www.myApp.com/webhooks",
+          "scope": "sheet",
+          "scopeObjectId": 3285357287499652,
+          "events": ["*.*"],
+          "version": 1,
+          "subscope": {
+            "columnIds": [7960873114331012, 2234073893033860]
+          },
+          "enabled": false,
+          "status": "NEW_NOT_VERIFIED",
+          "sharedSecret": "abc123def456ghi789jkl012mno345pqr678stu901vwx234yz",
+          "createdAt": "2020-08-25T12:15:47Z",
+          "modifiedAt": "2020-10-04T18:32:47Z",
+          "disabledDetails": "Webhook disabled due to verification failure",
+          "apiClientId": "abc123client",
+          "apiClientName": "Test API Client",
+          "stats": {
+            "lastCallbackAttempt": "2020-10-04T18:30:00Z",
+            "lastCallbackAttemptRetryCount": 0,
+            "lastSuccessfulCallback": "2020-10-04T18:29:45Z"
+          }
+        },
+        {
+          "id": 4012345678901235,
+          "name": "Test Plan Webhook",
+          "callbackUrl": "https://www.myApp.com/webhooks",
+          "scope": "plan",
+          "scopeObjectId": 3285357287499652,
+          "events": ["*.*"],
+          "version": 1,
+          "customHeaders": {
+            "x-custom-header": "custom-value",
+            "x-another-header": "another-value"
+          },
+          "enabled": false,
+          "status": "NEW_NOT_VERIFIED",
+          "sharedSecret": "abc123def456ghi789jkl012mno345pqr678stu901vwx234yz",
+          "createdAt": "2020-08-25T12:15:47Z",
+          "modifiedAt": "2020-10-04T18:32:47Z",
+          "disabledDetails": "Webhook disabled due to verification failure",
+          "apiClientId": "abc123client",
+          "apiClientName": "Test API Client",
+          "stats": {
+            "lastCallbackAttempt": "2020-10-04T18:30:00Z",
+            "lastCallbackAttemptRetryCount": 0,
+            "lastSuccessfulCallback": "2020-10-04T18:29:45Z"
+          }
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
