@@ -1,13 +1,13 @@
 {
   "request": {
-    "urlPathPattern": "/2.0/favorites",
-    "method": "POST",
+    "urlPathTemplate": "/2.0/favorites/{favoriteType}",
+    "method": "DELETE",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/favorites/add-multiple-items-to-favorites/all-response-body-properties"
+        "equalTo": "/favorites/delete-multiple-favorites/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -19,17 +19,7 @@
     "status": 200,
     "jsonBody": {
       "message": "SUCCESS",
-      "resultCode": 0,
-      "result": [
-        {
-          "type": "sheet",
-          "objectId": 1234567890123456
-        },
-        {
-          "type": "folder",
-          "objectId": 2345678901234567
-        }
-      ]
+      "resultCode": 0
     },
     "headers": {
       "Content-Type": "application/json"

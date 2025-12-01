@@ -1,13 +1,13 @@
 {
   "request": {
-    "urlPathTemplate": "/2.0/favorites/{favoriteType}",
+    "urlPathTemplate": "/2.0/favorites/{favoriteType}/{favoriteId}",
     "method": "DELETE",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/favorites/remove-multiple-favorites/all-response-body-properties"
+        "equalTo": "/favorites/delete-favorite/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"

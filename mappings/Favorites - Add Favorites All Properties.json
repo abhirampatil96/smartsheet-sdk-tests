@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/favorites/add-items-to-favorites/all-response-body-properties"
+        "equalTo": "/favorites/add-favorites/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
