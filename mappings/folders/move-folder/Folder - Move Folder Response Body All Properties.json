@@ -18,8 +18,13 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-      "destinationId": 9876543210123456,
-      "destinationType": "folder"
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": {
+        "id": 7116448184199044,
+        "name": "Test Folder",
+        "permalink": "https://app.smartsheet.com/folders/7116448184199044"
+      }
     },
     "headers": {
       "Content-Type": "application/json"

@@ -18,9 +18,13 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-      "destinationType": "folder",
-      "destinationId": 9876543210123456,
-      "newName": "Copied Folder"
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": {
+        "id": 3456789012345678,
+        "name": "New Child Folder",
+        "permalink": "https://app.smartsheet.com/folders/3456789012345678"
+      }
     },
     "headers": {
       "Content-Type": "application/json"
