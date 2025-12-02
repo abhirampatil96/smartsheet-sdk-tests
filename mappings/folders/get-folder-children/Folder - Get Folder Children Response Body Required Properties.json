@@ -1,0 +1,44 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/folders/{folderId}/children",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/folders/get-folder-children/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 1234567890123456,
+          "name": "Child Folder 1",
+          "permalink": "https://app.smartsheet.com/folders/1234567890123456",
+          "createdAt": "2020-08-25T12:15:47Z",
+          "modifiedAt": "2020-10-04T18:32:47Z",
+          "resourceType": "folder"
+        },
+        {
+          "id": 2234567890123456,
+          "name": "Test Sheet",
+          "permalink": "https://app.smartsheet.com/sheets/2234567890123456",
+          "createdAt": "2020-08-25T12:15:47Z",
+          "modifiedAt": "2020-10-04T18:32:47Z",
+          "resourceType": "sheet"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/folders/{folderId}",
+    "method": "PUT",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/folders/update-folder/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "version": 2,
+      "failedItems": [],
+      "result": {
+        "id": 7116448184199044,
+        "name": "Updated Folder Name",
+        "permalink": "https://app.smartsheet.com/folders/7116448184199044",
+        "folders": [],
+        "sheets": [],
+        "reports": [],
+        "sights": [],
+        "templates": []
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
