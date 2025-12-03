@@ -20,8 +20,6 @@
     "jsonBody": {
       "message": "SUCCESS",
       "resultCode": 0,
-      "version": 2,
-      "failedItems": [],
       "result": {
         "id": 7116448184199044,
         "name": "Updated Folder Name",

@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/folders/get-folder-children/all-response-body-properties"
+        "equalTo": "/folders/list-folder-children/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
