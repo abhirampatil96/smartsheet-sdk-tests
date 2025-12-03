@@ -1,0 +1,65 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/folders/{folderId}/children",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/folders/list-folder-children/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 1234567890123456,
+          "name": "Child Folder 1",
+          "permalink": "https://app.smartsheet.com/folders/1234567890123456",
+          "createdAt": "2020-08-25T12:15:47Z",
+          "modifiedAt": "2020-10-04T18:32:47Z",
+          "accessLevel": "OWNER",
+          "resourceType": "folder"
+        },
+        {
+          "id": 2234567890123456,
+          "name": "Test Sheet",
+          "permalink": "https://app.smartsheet.com/sheets/2234567890123456",
+          "createdAt": "2020-08-25T12:15:47Z",
+          "modifiedAt": "2020-10-04T18:32:47Z",
+          "accessLevel": "OWNER",
+          "resourceType": "sheet"
+        },
+        {
+          "id": 3234567890123456,
+          "name": "Test Report",
+          "permalink": "https://app.smartsheet.com/reports/3234567890123456",
+          "createdAt": "2020-08-25T12:15:47Z",
+          "modifiedAt": "2020-10-04T18:32:47Z",
+          "accessLevel": "EDITOR",
+          "resourceType": "report"
+        },
+        {
+          "id": 4234567890123456,
+          "name": "Test Dashboard",
+          "permalink": "https://app.smartsheet.com/dashboards/4234567890123456",
+          "createdAt": "2020-08-25T12:15:47Z",
+          "modifiedAt": "2020-10-04T18:32:47Z",
+          "accessLevel": "VIEWER",
+          "resourceType": "sight"
+        }
+      ],
+      "lastKey": "next-page-token-12345"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
