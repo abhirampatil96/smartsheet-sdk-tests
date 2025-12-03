@@ -23,12 +23,7 @@
       "result": {
         "id": 3456789012345678,
         "name": "New Child Folder",
-        "permalink": "https://app.smartsheet.com/folders/3456789012345678",
-        "folders": [],
-        "sheets": [],
-        "reports": [],
-        "sights": [],
-        "templates": []
+        "permalink": "https://app.smartsheet.com/folders/3456789012345678"
       }
     },
     "headers": {

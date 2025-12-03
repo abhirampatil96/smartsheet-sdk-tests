@@ -33,6 +33,7 @@
           "permalink": "https://app.smartsheet.com/sheets/2234567890123456",
           "createdAt": "2020-08-25T12:15:47Z",
           "modifiedAt": "2020-10-04T18:32:47Z",
+          "accessLevel": "OWNER",
           "resourceType": "sheet"
         }
       ]
