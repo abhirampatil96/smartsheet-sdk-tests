@@ -1,0 +1,50 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/groups",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/groups/list-groups/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 4583173393803140,
+          "name": "Engineering Team",
+          "description": "All engineering department members",
+          "owner": "john.doe@example.com",
+          "ownerId": 2331373580117892,
+          "createdAt": "2023-01-15T10:30:00Z",
+          "modifiedAt": "2023-06-20T14:45:00Z"
+        },
+        {
+          "id": 2331373580117892,
+          "name": "Marketing Team",
+          "description": "Marketing and communications team",
+          "owner": "jane.smith@example.com",
+          "ownerId": 7960873580117892,
+          "createdAt": "2023-02-10T09:15:00Z",
+          "modifiedAt": "2023-07-01T11:20:00Z"
+        }
+      ],
+      "pageNumber": 1,
+      "pageSize": 100,
+      "totalPages": 1,
+      "totalCount": 2
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
