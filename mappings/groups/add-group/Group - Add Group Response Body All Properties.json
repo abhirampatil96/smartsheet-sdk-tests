@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/groups/create-group/all-response-body-properties"
+        "equalTo": "/groups/add-group/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
