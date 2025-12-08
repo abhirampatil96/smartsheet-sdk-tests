@@ -1,0 +1,41 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/imageurls",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/images/list-image-urls/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "imageUrls": [
+        {
+          "imageId": "jpbGklqdfZuL4Jw-kZhdZA",
+          "height": 1050,
+          "width": 1050,
+          "url": "https://s3.amazonaws.com/smartsheet-prod-attachments/jpbGklqdfZuL4Jw-kZhdZA?AWSAccessKeyId=AKIAJXVIII4QWQGBZ7QA&Expires=1733654117&Signature=abc123def456"
+        },
+        {
+          "imageId": "xYz789AbCdEfGhIj-KlMnOp",
+          "height": 800,
+          "width": 600,
+          "url": "https://s3.amazonaws.com/smartsheet-prod-attachments/xYz789AbCdEfGhIj-KlMnOp?AWSAccessKeyId=AKIAJXVIII4QWQGBZ7QA&Expires=1733654117&Signature=xyz789abc123"
+        }
+      ],
+      "urlExpiresInMillis": 120000
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
