@@ -1,0 +1,39 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/reports",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/list-reports/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 4583173393803140,
+          "name": "Test Report",
+          "accessLevel": "VIEWER",
+          "permalink": "https://app.smartsheet.com/reports/test-report",
+          "isSummaryReport": true
+        }
+      ],
+      "pageNumber": 1,
+      "pageSize": 100,
+      "totalPages": 1,
+      "totalCount": 1
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

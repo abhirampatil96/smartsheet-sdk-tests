@@ -1,0 +1,79 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/get-report/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "scope": {
+        "sheets": [],
+        "workspaces": []
+      },
+      "isSummaryReport": false,
+      "id": 4583173393803140,
+      "fromId": 0,
+      "ownerId": 1234567890123456,
+      "accessLevel": "VIEWER",
+      "cellImageUploadEnabled": false,
+      "columns": [],
+      "createdAt": "2019-08-24T14:15:22Z",
+      "dependenciesEnabled": false,
+      "effectiveAttachmentOptions": [],
+      "ganttEnabled": false,
+      "hasSummaryFields": false,
+      "isMultiPicklistEnabled": false,
+      "modifiedAt": "2019-08-24T14:15:22Z",
+      "name": "Test Report",
+      "owner": "test.user@smartsheet.com",
+      "permalink": "https://app.smartsheet.com/reports/test-report",
+      "projectSettings": {
+        "lengthOfDay": 8,
+        "nonWorkingDays": [],
+        "workingDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"]
+      },
+      "readOnly": false,
+      "resourceManagementEnabled": false,
+      "resourceManagementType": "NONE",
+      "rows": [],
+      "showParentRowsForFilters": false,
+      "source": {
+        "id": 0,
+        "type": "sheet"
+      },
+      "summary": {
+        "fields": []
+      },
+      "totalRowCount": 0,
+      "userPermissions": {
+        "summaryPermissions": "VIEWER"
+      },
+      "userSettings": {
+        "criticalPathEnabled": false,
+        "displaySummaryTasks": false
+      },
+      "version": 1,
+      "workspace": {
+        "id": 0,
+        "name": "Test Workspace",
+        "accessLevel": "VIEWER",
+        "permalink": "https://app.smartsheet.com/workspaces/test"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
