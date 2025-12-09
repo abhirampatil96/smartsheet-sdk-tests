@@ -1,6 +1,6 @@
 {
   "request": {
-    "urlPathPattern": "/2.0/sheets/[0-9]+/rows/[0-9]+/columns/[0-9]+/cellimages.*",
+    "urlPathTemplate": "/2.0/sheets/{sheetId}/rows/{rowId}/columns/{columnId}/cellimages",
     "method": "POST",
     "headers": {
       "Authorization": {
