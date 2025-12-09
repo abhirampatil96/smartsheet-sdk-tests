@@ -1,0 +1,309 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/sheets/{sheetId}/rows/{rowId}/columns/{columnId}/cellimages",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/cell-images/add-image-to-cell/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "version": 1,
+      "failedItems": [
+        {
+          "rowId": 123456789,
+          "error": {
+            "refId": "abc123",
+            "errorCode": 1001,
+            "message": "Failed to add image"
+          },
+          "index": 0
+        }
+      ],
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": {
+        "id": 1234567890123456,
+        "sheetId": 9876543210987654,
+        "siblingId": 1111111111111111,
+        "accessLevel": "ADMIN",
+        "attachments": [
+          {
+            "id": 2222222222222222,
+            "parentId": 1234567890123456,
+            "attachmentType": "FILE",
+            "attachmentSubType": "DOCUMENT",
+            "mimeType": "image/png",
+            "parentType": "ROW",
+            "createdAt": "2019-08-24T14:15:22Z",
+            "createdBy": {
+              "email": "jane.doe@smartsheet.com",
+              "name": "Jane Doe"
+            },
+            "name": "test-image.png",
+            "sizeInKb": 125,
+            "url": "https://s3.amazonaws.com/smartsheet-prod-attachments/test-image.png",
+            "urlExpiresInMillis": 120000
+          }
+        ],
+        "cells": [
+          {
+            "columnId": 3333333333333333,
+            "columnType": "TEXT_NUMBER",
+            "conditionalFormat": ",,1,1,,,,,,,,,,,,,",
+            "displayValue": "Sample Cell Value",
+            "format": ",,1,1,,,,,,,,,,,,,",
+            "formula": "=SUM(A1:A10)",
+            "hyperlink": {
+              "reportId": 4444444444444444,
+              "sheetId": 9876543210987654,
+              "sightId": 5555555555555555,
+              "url": "https://example.com"
+            },
+            "image": {
+              "altText": "Test image",
+              "height": 100,
+              "id": "img_abc123def456",
+              "width": 200
+            },
+            "linkInFromCell": {
+              "columnId": 6666666666666666,
+              "rowId": 7777777777777777,
+              "sheetId": 8888888888888888,
+              "sheetName": "Source Sheet",
+              "status": "OK"
+            },
+            "linksOutToCells": [
+              {
+                "columnId": 9999999999999998,
+                "rowId": 1010101010101010,
+                "sheetId": 1212121212121212,
+                "sheetName": "Target Sheet",
+                "status": "OK"
+              }
+            ],
+            "objectValue": {
+              "objectType": "ABSTRACT_DATETIME",
+              "value": "2025-03-03T16:59:59"
+            },
+            "overrideValidation": true,
+            "strict": true,
+            "value": "Sample Value"
+          }
+        ],
+        "columns": [
+          {
+            "autoNumberFormat": {
+              "fill": "0000",
+              "prefix": "ID-",
+              "startingNumber": 1,
+              "suffix": "-END"
+            },
+            "contactOptions": [
+              {
+                "email": "contact@example.com",
+                "name": "Contact Name"
+              }
+            ],
+            "description": "Column description",
+            "format": ",,1,1,,,,,,,,,,,,,",
+            "formula": "=A1+B1",
+            "hidden": false,
+            "id": 3333333333333333,
+            "index": 0,
+            "locked": false,
+            "lockedForUser": false,
+            "options": [
+              "Option 1",
+              "Option 2"
+            ],
+            "primary": true,
+            "symbol": "STAR",
+            "systemColumnType": "AUTO_NUMBER",
+            "tags": [
+              "CALENDAR_START_DATE"
+            ],
+            "title": "Primary Column",
+            "type": "TEXT_NUMBER",
+            "validation": true,
+            "version": 1,
+            "width": 150
+          }
+        ],
+        "conditionalFormat": ",,1,1,,,,,,,,,,,,,",
+        "createdAt": "2019-08-24T14:15:22Z",
+        "createdBy": {
+          "email": "jane.doe@smartsheet.com",
+          "name": "Jane Doe"
+        },
+        "discussions": [
+          {
+            "accessLevel": "ADMIN",
+            "id": 1313131313131313,
+            "comments": [
+              {
+                "attachments": [
+                  {
+                    "id": 1414141414141414,
+                    "parentId": 1515151515151515,
+                    "attachmentType": "FILE",
+                    "attachmentSubType": "DOCUMENT",
+                    "mimeType": "application/pdf",
+                    "parentType": "COMMENT",
+                    "createdAt": "2019-08-24T14:15:22Z",
+                    "createdBy": {
+                      "email": "jane.doe@smartsheet.com",
+                      "name": "Jane Doe"
+                    },
+                    "name": "document.pdf",
+                    "sizeInKb": 250,
+                    "url": "https://example.com/document.pdf",
+                    "urlExpiresInMillis": 120000
+                  }
+                ],
+                "createdAt": "2019-08-24T14:15:22Z",
+                "createdBy": {
+                  "email": "jane.doe@smartsheet.com",
+                  "name": "Jane Doe"
+                },
+                "discussionId": 1313131313131313,
+                "id": 1515151515151515,
+                "modifiedAt": "2019-08-24T14:15:22Z",
+                "text": "This is a comment"
+              }
+            ],
+            "commentAttachments": [
+              {
+                "id": 1414141414141414,
+                "parentId": 1515151515151515,
+                "attachmentType": "FILE",
+                "attachmentSubType": "DOCUMENT",
+                "mimeType": "application/pdf",
+                "parentType": "COMMENT",
+                "createdAt": "2019-08-24T14:15:22Z",
+                "createdBy": {
+                  "email": "jane.doe@smartsheet.com",
+                  "name": "Jane Doe"
+                },
+                "name": "document.pdf",
+                "sizeInKb": 250,
+                "url": "https://example.com/document.pdf",
+                "urlExpiresInMillis": 120000
+              }
+            ],
+            "commentCount": 1,
+            "createdBy": {
+              "email": "jane.doe@smartsheet.com",
+              "name": "Jane Doe"
+            },
+            "lastCommentedAt": "2019-08-24T14:15:22Z",
+            "lastCommentedUser": {
+              "email": "jane.doe@smartsheet.com",
+              "name": "Jane Doe"
+            },
+            "parentId": 1234567890123456,
+            "parentType": "ROW",
+            "readOnly": false,
+            "title": "Discussion Title"
+          }
+        ],
+        "proof": {
+          "id": 1616161616161616,
+          "originalId": 1717171717171717,
+          "name": "Proof Document",
+          "type": "DOCUMENT",
+          "documentType": "PDF",
+          "proofRequestUrl": "https://example.com/proof",
+          "version": 1,
+          "lastUpdatedAt": "2019-08-24T14:15:22Z",
+          "lastUpdatedBy": {
+            "email": "jane.doe@smartsheet.com",
+            "name": "Jane Doe"
+          },
+          "isCompleted": true,
+          "attachments": [
+            {
+              "id": 1818181818181818,
+              "parentId": 1616161616161616,
+              "attachmentType": "FILE",
+              "attachmentSubType": "DOCUMENT",
+              "mimeType": "application/pdf",
+              "parentType": "PROOF",
+              "createdAt": "2019-08-24T14:15:22Z",
+              "createdBy": {
+                "email": "jane.doe@smartsheet.com",
+                "name": "Jane Doe"
+              },
+              "name": "proof.pdf",
+              "sizeInKb": 500,
+              "url": "https://example.com/proof.pdf",
+              "urlExpiresInMillis": 120000
+            }
+          ],
+          "discussions": [
+            {
+              "accessLevel": "ADMIN",
+              "id": 1919191919191919,
+              "comments": [
+                {
+                  "attachments": [],
+                  "createdAt": "2019-08-24T14:15:22Z",
+                  "createdBy": {
+                    "email": "jane.doe@smartsheet.com",
+                    "name": "Jane Doe"
+                  },
+                  "discussionId": 1919191919191919,
+                  "id": 2020202020202020,
+                  "modifiedAt": "2019-08-24T14:15:22Z",
+                  "text": "Proof comment"
+                }
+              ],
+              "commentAttachments": [],
+              "commentCount": 1,
+              "createdBy": {
+                "email": "jane.doe@smartsheet.com",
+                "name": "Jane Doe"
+              },
+              "lastCommentedAt": "2019-08-24T14:15:22Z",
+              "lastCommentedUser": {
+                "email": "jane.doe@smartsheet.com",
+                "name": "Jane Doe"
+              },
+              "parentId": 1616161616161616,
+              "parentType": "PROOF",
+              "readOnly": false,
+              "title": "Proof Discussion"
+            }
+          ]
+        },
+        "expanded": true,
+        "filteredOut": false,
+        "format": ",,1,1,,,,,,,,,,,,,",
+        "inCriticalPath": false,
+        "locked": false,
+        "lockedForUser": false,
+        "modifiedAt": "2019-08-24T14:15:22Z",
+        "modifiedBy": {
+          "email": "jane.doe@smartsheet.com",
+          "name": "Jane Doe"
+        },
+        "permaLink": "https://app.smartsheet.com/sheets/123456789",
+        "rowNumber": 1,
+        "version": 1
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

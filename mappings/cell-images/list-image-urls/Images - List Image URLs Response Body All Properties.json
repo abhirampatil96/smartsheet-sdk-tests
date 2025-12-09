@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/images/list-image-urls/all-response-body-properties"
+        "equalTo": "/cell-images/list-image-urls/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -21,6 +21,11 @@
       "imageUrls": [
         {
           "imageId": "jpbGklqdfZuL4Jw-kZhdZA",
+          "error": {
+            "refId": "123",
+            "errorCode": 0,
+            "message": "Image not found"
+          },
           "height": 1050,
           "width": 1050,
           "url": "https://s3.amazonaws.com/smartsheet-prod-attachments/jpbGklqdfZuL4Jw-kZhdZA?AWSAccessKeyId=AKIAJXVIII4QWQGBZ7QA&Expires=1733654117&Signature=abc123def456"

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/sheets/[0-9]+/rows/[0-9]+/columns/[0-9]+/cellimages.*",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/cell-images/add-image-to-cell/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "version": 1,
+      "result": {
+        "id": 1234567890123456,
+        "sheetId": 9876543210987654,
+        "rowNumber": 1,
+        "expanded": true,
+        "createdAt": "2019-08-24T14:15:22Z",
+        "modifiedAt": "2019-08-24T14:15:22Z",
+        "cells": []
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
