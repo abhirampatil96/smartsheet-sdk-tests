@@ -149,7 +149,7 @@
       "permalink": "https://app.smartsheet.com/reports/test-report",
       "projectSettings": {
         "lengthOfDay": 8,
-        "nonWorkingDays": ["SATURDAY", "SUNDAY"],
+        "nonWorkingDays": ["2019-12-25"],
         "workingDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"]
       },
       "readOnly": false,
