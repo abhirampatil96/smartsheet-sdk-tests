@@ -19,8 +19,22 @@
     "status": 200,
     "jsonBody": {
       "scope": {
-        "sheets": [],
-        "workspaces": []
+        "sheets": [
+          {
+            "id": 1234567890123456,
+            "name": "Source Sheet 1",
+            "accessLevel": "VIEWER",
+            "permalink": "https://app.smartsheet.com/sheets/source-sheet-1"
+          }
+        ],
+        "workspaces": [
+          {
+            "id": 9876543210987654,
+            "name": "Source Workspace",
+            "accessLevel": "VIEWER",
+            "permalink": "https://app.smartsheet.com/workspaces/source-workspace"
+          }
+        ]
       },
       "isSummaryReport": false,
       "id": 4583173393803140,
@@ -28,10 +42,27 @@
       "ownerId": 1234567890123456,
       "accessLevel": "VIEWER",
       "cellImageUploadEnabled": false,
-      "columns": [],
+      "columns": [
+        {
+          "id": 1111111111111111,
+          "index": 0,
+          "title": "Task Name",
+          "type": "TEXT_NUMBER",
+          "primary": true,
+          "width": 150
+        },
+        {
+          "id": 2222222222222222,
+          "index": 1,
+          "title": "Status",
+          "type": "PICKLIST",
+          "options": ["Not Started", "In Progress", "Complete"],
+          "width": 100
+        }
+      ],
       "createdAt": "2019-08-24T14:15:22Z",
       "dependenciesEnabled": false,
-      "effectiveAttachmentOptions": [],
+      "effectiveAttachmentOptions": ["BOX", "DROPBOX", "GOOGLE_DRIVE", "ONEDRIVE"],
       "ganttEnabled": false,
       "hasSummaryFields": false,
       "isMultiPicklistEnabled": false,
@@ -41,20 +72,49 @@
       "permalink": "https://app.smartsheet.com/reports/test-report",
       "projectSettings": {
         "lengthOfDay": 8,
-        "nonWorkingDays": [],
+        "nonWorkingDays": ["SATURDAY", "SUNDAY"],
         "workingDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"]
       },
       "readOnly": false,
       "resourceManagementEnabled": false,
       "resourceManagementType": "NONE",
-      "rows": [],
+      "rows": [
+        {
+          "id": 5555555555555555,
+          "sheetId": 1234567890123456,
+          "rowNumber": 1,
+          "expanded": true,
+          "createdAt": "2019-08-24T14:15:22Z",
+          "modifiedAt": "2019-08-24T14:15:22Z",
+          "cells": [
+            {
+              "columnId": 1111111111111111,
+              "value": "Task 1",
+              "displayValue": "Task 1"
+            },
+            {
+              "columnId": 2222222222222222,
+              "value": "In Progress",
+              "displayValue": "In Progress"
+            }
+          ]
+        }
+      ],
       "showParentRowsForFilters": false,
       "source": {
         "id": 0,
         "type": "sheet"
       },
       "summary": {
-        "fields": []
+        "fields": [
+          {
+            "id": 7777777777777777,
+            "index": 0,
+            "title": "Total Tasks",
+            "type": "TEXT_NUMBER",
+            "displayValue": "10"
+          }
+        ]
       },
       "totalRowCount": 0,
       "userPermissions": {
