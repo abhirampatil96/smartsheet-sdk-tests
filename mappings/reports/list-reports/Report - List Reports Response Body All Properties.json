@@ -1,6 +1,6 @@
 {
   "request": {
-    "urlPathPattern": "/2.0/reports",
+    "urlPathTemplate": "/2.0/reports",
     "method": "GET",
     "headers": {
       "Authorization": {

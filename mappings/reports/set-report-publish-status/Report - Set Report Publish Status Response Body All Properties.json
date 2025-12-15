@@ -1,6 +1,6 @@
 {
   "request": {
-    "urlPathPattern": "/2.0/reports/[0-9]+/publish",
+    "urlPathTemplate": "/2.0/reports/{reportId}/publish",
     "method": "PUT",
     "headers": {
       "Authorization": {
