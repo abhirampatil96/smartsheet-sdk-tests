@@ -1,0 +1,29 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}/emails",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/send-report-via-email/success-response"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "version": 1
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

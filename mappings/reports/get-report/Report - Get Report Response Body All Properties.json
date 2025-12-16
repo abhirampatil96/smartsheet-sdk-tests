@@ -1,0 +1,663 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/get-report/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "id": 4583173393803140,
+      "name": "Test Report",
+      "accessLevel": "OWNER",
+      "permalink": "https://app.smartsheet.com/reports/test",
+      "createdAt": "2019-08-24T14:15:22Z",
+      "modifiedAt": "2019-08-25T10:30:45Z",
+      "isSummaryReport": false,
+      "readOnly": false,
+      "favorite": true,
+      "owner": "john.doe@smartsheet.com",
+      "ownerId": 1234567890,
+      "fromId": 9876543210,
+      "totalRowCount": 150,
+      "version": 5,
+      "cellImageUploadEnabled": true,
+      "dependenciesEnabled": false,
+      "ganttEnabled": false,
+      "hasSummaryFields": true,
+      "isMultiPicklistEnabled": true,
+      "resourceManagementEnabled": false,
+      "resourceManagementType": "NONE",
+      "showParentRowsForFilters": true,
+      "effectiveAttachmentOptions": ["FILE", "LINK"],
+      "scope": {
+        "sheets": [
+          {
+            "id": 1001,
+            "name": "Source Sheet",
+            "accessLevel": "ADMIN",
+            "permalink": "https://app.smartsheet.com/sheets/source",
+            "fromId": 1000,
+            "ownerId": 9876543210,
+            "createdAt": "2019-08-24T14:15:22Z",
+            "modifiedAt": "2019-08-25T10:30:45Z",
+            "version": 1,
+            "favorite": true,
+            "readOnly": false,
+            "cellImageUploadEnabled": true,
+            "dependenciesEnabled": false,
+            "ganttEnabled": false,
+            "hasSummaryFields": true,
+            "isMultiPicklistEnabled": true,
+            "resourceManagementEnabled": false,
+            "resourceManagementType": "NONE",
+            "showParentRowsForFilters": true,
+            "totalRowCount": 50,
+            "owner": "john.doe@smartsheet.com",
+            "effectiveAttachmentOptions": ["FILE"],
+            "attachments": [
+              {
+                "id": 2001,
+                "parentId": 1001,
+                "name": "attachment.pdf",
+                "attachmentType": "FILE",
+                "attachmentSubType": "DOCUMENT",
+                "mimeType": "application/pdf",
+                "parentType": "SHEET",
+                "createdAt": "2019-08-24T14:15:22Z",
+                "createdBy": {
+                  "email": "jane.doe@smartsheet.com",
+                  "name": "Jane Doe"
+                },
+                "sizeInKb": 1024,
+                "url": "https://example.com/attachment.pdf",
+                "urlExpiresInMillis": 1609459200000
+              }
+            ],
+            "columns": [
+              {
+                "id": 7001,
+                "index": 0,
+                "title": "Task Name",
+                "type": "TEXT_NUMBER",
+                "primary": true,
+                "width": 150,
+                "locked": false,
+                "lockedForUser": false,
+                "validation": true,
+                "version": 1,
+                "hidden": false,
+                "symbol": "STAR",
+                "description": "Task column",
+                "format": ",,1,1,,,,,,,,,,,,,",
+                "formula": "",
+                "systemColumnType": "AUTO_NUMBER",
+                "autoNumberFormat": {
+                  "fill": "0001",
+                  "prefix": "TASK-",
+                  "startingNumber": 1,
+                  "suffix": ""
+                },
+                "options": ["Option1", "Option2"],
+                "tags": ["CALENDAR_START_DATE"],
+                "contactOptions": [
+                  {
+                    "email": "contact@example.com",
+                    "name": "Contact Name"
+                  }
+                ]
+              }
+            ],
+            "rows": [
+              {
+                "id": 8001,
+                "rowNumber": 1,
+                "sheetId": 1001,
+                "siblingId": 8002,
+                "accessLevel": "ADMIN",
+                "expanded": true,
+                "filteredOut": false,
+                "inCriticalPath": false,
+                "locked": false,
+                "lockedForUser": false,
+                "createdAt": "2019-08-24T14:15:22Z",
+                "modifiedAt": "2019-08-25T10:30:45Z",
+                "version": 1,
+                "format": ",,1,1,,,,,,,,,,,,,",
+                "conditionalFormat": ",,1,1,,,,,,,,,,,,,",
+                "permaLink": "https://app.smartsheet.com/sheets/row/8001",
+                "createdBy": {
+                  "email": "jane.doe@smartsheet.com",
+                  "name": "Jane Doe"
+                },
+                "modifiedBy": {
+                  "email": "jane.doe@smartsheet.com",
+                  "name": "Jane Doe"
+                },
+                "cells": [
+                  {
+                    "columnId": 7001,
+                    "rowId": 8001,
+                    "columnType": "TEXT_NUMBER",
+                    "value": "Task 1",
+                    "displayValue": "Task 1",
+                    "format": ",,1,1,,,,,,,,,,,,,",
+                    "conditionalFormat": ",,1,1,,,,,,,,,,,,,",
+                    "formula": "",
+                    "strict": false,
+                    "overrideValidation": false,
+                    "hyperlink": {
+                      "url": "https://example.com",
+                      "reportId": 0,
+                      "sheetId": 0,
+                      "sightId": 0
+                    },
+                    "image": {
+                      "id": "img123",
+                      "altText": "Image",
+                      "height": 100,
+                      "width": 100
+                    },
+                    "linkInFromCell": {
+                      "columnId": 7001,
+                      "rowId": 8001,
+                      "sheetId": 1001,
+                      "sheetName": "Source",
+                      "status": "OK"
+                    },
+                    "linksOutToCells": [
+                      {
+                        "columnId": 7002,
+                        "rowId": 8002,
+                        "sheetId": 1002,
+                        "sheetName": "Target",
+                        "status": "OK"
+                      }
+                    ],
+                    "objectValue": {
+                      "objectType": "DATE",
+                      "value": "2025-03-03"
+                    }
+                  }
+                ],
+                "columns": [],
+                "attachments": [],
+                "discussions": [],
+                "proof": {
+                  "id": 9001,
+                  "originalId": 9000,
+                  "name": "Proof",
+                  "type": "DOCUMENT",
+                  "documentType": "PDF",
+                  "proofRequestUrl": "https://example.com/proof",
+                  "version": 1,
+                  "lastUpdatedAt": "2019-08-24T14:15:22Z",
+                  "lastUpdatedBy": {
+                    "email": "jane.doe@smartsheet.com",
+                    "name": "Jane Doe"
+                  },
+                  "isCompleted": true,
+                  "attachments": [],
+                  "discussions": []
+                }
+              }
+            ],
+            "discussions": [
+              {
+                "id": 5001,
+                "title": "Discussion",
+                "commentCount": 1,
+                "accessLevel": "ADMIN",
+                "parentId": 8001,
+                "parentType": "ROW",
+                "readOnly": false,
+                "lastCommentedAt": "2019-08-24T14:15:22Z",
+                "createdBy": {
+                  "email": "jane.doe@smartsheet.com",
+                  "name": "Jane Doe"
+                },
+                "lastCommentedUser": {
+                  "email": "jane.doe@smartsheet.com",
+                  "name": "Jane Doe"
+                },
+                "comments": [
+                  {
+                    "id": 6001,
+                    "discussionId": 5001,
+                    "text": "Comment text",
+                    "createdAt": "2019-08-24T14:15:22Z",
+                    "modifiedAt": "2019-08-24T14:15:22Z",
+                    "createdBy": {
+                      "email": "jane.doe@smartsheet.com",
+                      "name": "Jane Doe"
+                    },
+                    "attachments": []
+                  }
+                ],
+                "commentAttachments": []
+              }
+            ],
+            "crossSheetReferences": [
+              {
+                "id": 3001,
+                "name": "Cross Ref",
+                "startColumnId": 7001,
+                "endColumnId": 7002,
+                "startRowId": 8001,
+                "endRowId": 8002,
+                "sourceSheetId": 1001,
+                "status": "OK"
+              }
+            ],
+            "projectSettings": {
+              "workingDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
+              "nonWorkingDays": ["2019-12-25"],
+              "lengthOfDay": 8
+            },
+            "userSettings": {
+              "criticalPathEnabled": false,
+              "displaySummaryTasks": true
+            },
+            "userPermissions": {
+              "summaryPermissions": "ADMIN"
+            },
+            "source": {
+              "id": 1001,
+              "type": "sheet"
+            },
+            "summary": {
+              "fields": [
+                {
+                  "id": 10001,
+                  "title": "Summary Field",
+                  "type": "TEXT_NUMBER",
+                  "index": 0,
+                  "locked": false,
+                  "lockedForUser": false,
+                  "validation": true,
+                  "displayValue": "Value",
+                  "format": ",,1,1,,,,,,,,,,,,,",
+                  "formula": "=SUM([Col1]:[Col2])",
+                  "symbol": "STAR",
+                  "createdAt": "2019-08-24T14:15:22Z",
+                  "modifiedAt": "2019-08-25T10:30:45Z",
+                  "createdBy": {
+                    "email": "jane.doe@smartsheet.com",
+                    "name": "Jane Doe"
+                  },
+                  "modifiedBy": {
+                    "email": "jane.doe@smartsheet.com",
+                    "name": "Jane Doe"
+                  },
+                  "hyperlink": {
+                    "url": "https://example.com",
+                    "reportId": 0,
+                    "sheetId": 0,
+                    "sightId": 0
+                  },
+                  "image": {
+                    "id": "sumimg123",
+                    "altText": "Summary Image",
+                    "height": 50,
+                    "width": 50
+                  },
+                  "objectValue": {
+                    "objectType": "NUMBER",
+                    "value": "100"
+                  },
+                  "options": ["Opt1"],
+                  "contactOptions": []
+                }
+              ]
+            },
+            "workspace": {
+              "id": 2001,
+              "name": "Workspace",
+              "accessLevel": "ADMIN",
+              "permalink": "https://app.smartsheet.com/workspaces/test"
+            }
+          }
+        ],
+        "workspaces": [
+          {
+            "id": 2001,
+            "name": "Workspace",
+            "accessLevel": "ADMIN",
+            "permalink": "https://app.smartsheet.com/workspaces/test"
+          }
+        ]
+      },
+      "sourceSheets": [
+        {
+          "id": 1001,
+          "name": "Source Sheet",
+          "accessLevel": "ADMIN",
+          "permalink": "https://app.smartsheet.com/sheets/source",
+          "fromId": 1000,
+          "ownerId": 9876543210,
+          "createdAt": "2019-08-24T14:15:22Z",
+          "modifiedAt": "2019-08-25T10:30:45Z",
+          "version": 1,
+          "favorite": true,
+          "readOnly": false,
+          "cellImageUploadEnabled": true,
+          "dependenciesEnabled": false,
+          "ganttEnabled": false,
+          "hasSummaryFields": true,
+          "isMultiPicklistEnabled": true,
+          "resourceManagementEnabled": false,
+          "resourceManagementType": "NONE",
+          "showParentRowsForFilters": true,
+          "totalRowCount": 50,
+          "owner": "john.doe@smartsheet.com",
+          "effectiveAttachmentOptions": ["FILE"],
+          "attachments": [],
+          "columns": [],
+          "rows": [],
+          "discussions": [],
+          "crossSheetReferences": [],
+          "projectSettings": {
+            "workingDays": ["MONDAY"],
+            "nonWorkingDays": ["2019-12-25"],
+            "lengthOfDay": 8
+          },
+          "userSettings": {
+            "criticalPathEnabled": false,
+            "displaySummaryTasks": true
+          },
+          "userPermissions": {
+            "summaryPermissions": "ADMIN"
+          },
+          "source": {
+            "id": 1001,
+            "type": "sheet"
+          },
+          "summary": {
+            "fields": []
+          },
+          "workspace": {
+            "id": 2001,
+            "name": "Workspace",
+            "accessLevel": "ADMIN",
+            "permalink": "https://app.smartsheet.com/workspaces/test"
+          }
+        }
+      ],
+      "columns": [
+        {
+          "id": 7001,
+          "index": 0,
+          "title": "Task Name",
+          "type": "TEXT_NUMBER",
+          "primary": true,
+          "width": 150,
+          "locked": false,
+          "lockedForUser": false,
+          "validation": true,
+          "version": 1,
+          "hidden": false,
+          "symbol": "STAR",
+          "description": "Task column",
+          "format": ",,1,1,,,,,,,,,,,,,",
+          "formula": "",
+          "systemColumnType": "AUTO_NUMBER",
+          "autoNumberFormat": {
+            "fill": "0001",
+            "prefix": "TASK-",
+            "startingNumber": 1,
+            "suffix": ""
+          },
+          "options": ["Option1"],
+          "tags": ["CALENDAR_START_DATE"],
+          "contactOptions": [
+            {
+              "email": "contact@example.com",
+              "name": "Contact Name"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "id": 8001,
+          "rowNumber": 1,
+          "sheetId": 4583173393803140,
+          "siblingId": 8002,
+          "accessLevel": "ADMIN",
+          "expanded": true,
+          "filteredOut": false,
+          "inCriticalPath": false,
+          "locked": false,
+          "lockedForUser": false,
+          "createdAt": "2019-08-24T14:15:22Z",
+          "modifiedAt": "2019-08-25T10:30:45Z",
+          "version": 1,
+          "format": ",,1,1,,,,,,,,,,,,,",
+          "conditionalFormat": ",,1,1,,,,,,,,,,,,,",
+          "permaLink": "https://app.smartsheet.com/sheets/row/8001",
+          "createdBy": {
+            "email": "jane.doe@smartsheet.com",
+            "name": "Jane Doe"
+          },
+          "modifiedBy": {
+            "email": "jane.doe@smartsheet.com",
+            "name": "Jane Doe"
+          },
+          "cells": [
+            {
+              "columnId": 7001,
+              "rowId": 8001,
+              "columnType": "TEXT_NUMBER",
+              "value": "Task 1",
+              "displayValue": "Task 1",
+              "format": ",,1,1,,,,,,,,,,,,,",
+              "conditionalFormat": ",,1,1,,,,,,,,,,,,,",
+              "formula": "",
+              "strict": false,
+              "overrideValidation": false,
+              "hyperlink": {
+                "url": "https://example.com",
+                "reportId": 0,
+                "sheetId": 0,
+                "sightId": 0
+              },
+              "image": {
+                "id": "img123",
+                "altText": "Image",
+                "height": 100,
+                "width": 100
+              },
+              "linkInFromCell": {
+                "columnId": 7001,
+                "rowId": 8001,
+                "sheetId": 1001,
+                "sheetName": "Source",
+                "status": "OK"
+              },
+              "linksOutToCells": [
+                {
+                  "columnId": 7002,
+                  "rowId": 8002,
+                  "sheetId": 1002,
+                  "sheetName": "Target",
+                  "status": "OK"
+                }
+              ],
+              "objectValue": {
+                "objectType": "DATE",
+                "value": "2025-03-03"
+              }
+            }
+          ],
+          "columns": [],
+          "attachments": [],
+          "discussions": [],
+          "proof": {
+            "id": 9001,
+            "originalId": 9000,
+            "name": "Proof",
+            "type": "DOCUMENT",
+            "documentType": "PDF",
+            "proofRequestUrl": "https://example.com/proof",
+            "version": 1,
+            "lastUpdatedAt": "2019-08-24T14:15:22Z",
+            "lastUpdatedBy": {
+              "email": "jane.doe@smartsheet.com",
+              "name": "Jane Doe"
+            },
+            "isCompleted": true,
+            "attachments": [],
+            "discussions": []
+          }
+        }
+      ],
+      "attachments": [
+        {
+          "id": 2001,
+          "parentId": 4583173393803140,
+          "name": "attachment.pdf",
+          "attachmentType": "FILE",
+          "attachmentSubType": "DOCUMENT",
+          "mimeType": "application/pdf",
+          "parentType": "REPORT",
+          "createdAt": "2019-08-24T14:15:22Z",
+          "createdBy": {
+            "email": "jane.doe@smartsheet.com",
+            "name": "Jane Doe"
+          },
+          "sizeInKb": 1024,
+          "url": "https://example.com/attachment.pdf",
+          "urlExpiresInMillis": 1609459200000
+        }
+      ],
+      "discussions": [
+        {
+          "id": 5001,
+          "title": "Discussion",
+          "commentCount": 1,
+          "accessLevel": "ADMIN",
+          "parentId": 8001,
+          "parentType": "ROW",
+          "readOnly": false,
+          "lastCommentedAt": "2019-08-24T14:15:22Z",
+          "createdBy": {
+            "email": "jane.doe@smartsheet.com",
+            "name": "Jane Doe"
+          },
+          "lastCommentedUser": {
+            "email": "jane.doe@smartsheet.com",
+            "name": "Jane Doe"
+          },
+          "comments": [
+            {
+              "id": 6001,
+              "discussionId": 5001,
+              "text": "Comment text",
+              "createdAt": "2019-08-24T14:15:22Z",
+              "modifiedAt": "2019-08-24T14:15:22Z",
+              "createdBy": {
+                "email": "jane.doe@smartsheet.com",
+                "name": "Jane Doe"
+              },
+              "attachments": []
+            }
+          ],
+          "commentAttachments": []
+        }
+      ],
+      "crossSheetReferences": [
+        {
+          "id": 3001,
+          "name": "Cross Ref",
+          "startColumnId": 7001,
+          "endColumnId": 7002,
+          "startRowId": 8001,
+          "endRowId": 8002,
+          "sourceSheetId": 1001,
+          "status": "OK"
+        }
+      ],
+      "workspace": {
+        "id": 2001,
+        "name": "Workspace",
+        "accessLevel": "ADMIN",
+        "permalink": "https://app.smartsheet.com/workspaces/test"
+      },
+      "projectSettings": {
+        "workingDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
+        "nonWorkingDays": ["2019-12-25"],
+        "lengthOfDay": 8
+      },
+      "userSettings": {
+        "criticalPathEnabled": false,
+        "displaySummaryTasks": true
+      },
+      "userPermissions": {
+        "summaryPermissions": "ADMIN"
+      },
+      "source": {
+        "id": 4583173393803140,
+        "type": "report"
+      },
+      "summary": {
+        "fields": [
+          {
+            "id": 10001,
+            "title": "Summary Field",
+            "type": "TEXT_NUMBER",
+            "index": 0,
+            "locked": false,
+            "lockedForUser": false,
+            "validation": true,
+            "displayValue": "Value",
+            "format": ",,1,1,,,,,,,,,,,,,",
+            "formula": "=SUM([Col1]:[Col2])",
+            "symbol": "STAR",
+            "createdAt": "2019-08-24T14:15:22Z",
+            "modifiedAt": "2019-08-25T10:30:45Z",
+            "createdBy": {
+              "email": "jane.doe@smartsheet.com",
+              "name": "Jane Doe"
+            },
+            "modifiedBy": {
+              "email": "jane.doe@smartsheet.com",
+              "name": "Jane Doe"
+            },
+            "hyperlink": {
+              "url": "https://example.com",
+              "reportId": 0,
+              "sheetId": 0,
+              "sightId": 0
+            },
+            "image": {
+              "id": "sumimg123",
+              "altText": "Summary Image",
+              "height": 50,
+              "width": 50
+            },
+            "objectValue": {
+              "objectType": "NUMBER",
+              "value": "100"
+            },
+            "options": ["Opt1"],
+            "contactOptions": []
+          }
+        ]
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

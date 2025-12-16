@@ -1,0 +1,35 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}/publish",
+    "method": "PUT",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/set-report-publish-status/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": {
+        "readOnlyFullAccessibleBy": "ALL",
+        "readOnlyFullDefaultView": "GRID",
+        "readOnlyFullEnabled": true,
+        "readOnlyFullUrl": "https://publish.smartsheet.com/abc123readonly",
+        "readOnlyFullShowToolbar": true
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/get-report/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "scope": {
+        "sheets": [
+          {
+            "id": 1234567890123456,
+            "fromId": 0,
+            "ownerId": 1234567890123456,
+            "accessLevel": "VIEWER",
+            "cellImageUploadEnabled": false,
+            "columns": [],
+            "createdAt": "2019-08-24T14:15:22Z",
+            "dependenciesEnabled": false,
+            "effectiveAttachmentOptions": [],
+            "ganttEnabled": false,
+            "hasSummaryFields": false,
+            "isMultiPicklistEnabled": false,
+            "modifiedAt": "2019-08-24T14:15:22Z",
+            "name": "Source Sheet 1",
+            "owner": "test.user@smartsheet.com",
+            "permalink": "https://app.smartsheet.com/sheets/source-sheet-1",
+            "projectSettings": {
+              "lengthOfDay": 8,
+              "nonWorkingDays": [],
+              "workingDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"]
+            },
+            "readOnly": false,
+            "resourceManagementEnabled": false,
+            "resourceManagementType": "NONE",
+            "rows": [],
+            "showParentRowsForFilters": false,
+            "source": {
+              "id": 1234567890123456,
+              "type": "sheet"
+            },
+            "summary": {
+              "fields": []
+            },
+            "totalRowCount": 0,
+            "userPermissions": {
+              "summaryPermissions": "VIEWER"
+            },
+            "userSettings": {
+              "criticalPathEnabled": false,
+              "displaySummaryTasks": false
+            },
+            "version": 1,
+            "workspace": {
+              "id": 0,
+              "name": "Test Workspace",
+              "accessLevel": "VIEWER",
+              "permalink": "https://app.smartsheet.com/workspaces/test"
+            }
+          }
+        ],
+        "workspaces": [
+          {
+            "id": 9876543210987654,
+            "name": "Source Workspace",
+            "accessLevel": "VIEWER",
+            "permalink": "https://app.smartsheet.com/workspaces/source-workspace"
+          }
+        ]
+      },
+      "isSummaryReport": false,
+      "id": 4583173393803140,
+      "fromId": 0,
+      "ownerId": 1234567890123456,
+      "accessLevel": "VIEWER",
+      "cellImageUploadEnabled": false,
+      "columns": [
+        {
+          "autoNumberFormat": {
+            "fill": "",
+            "prefix": "",
+            "startingNumber": 0,
+            "suffix": ""
+          },
+          "contactOptions": [],
+          "description": "",
+          "formula": "",
+          "hidden": false,
+          "id": 1111111111111111,
+          "index": 0,
+          "locked": false,
+          "lockedForUser": false,
+          "options": [],
+          "primary": true,
+          "systemColumnType": "",
+          "tags": [],
+          "title": "Task Name",
+          "type": "TEXT_NUMBER",
+          "validation": false,
+          "version": 0,
+          "width": 150
+        },
+        {
+          "autoNumberFormat": {
+            "fill": "",
+            "prefix": "",
+            "startingNumber": 0,
+            "suffix": ""
+          },
+          "contactOptions": [],
+          "description": "",
+          "formula": "",
+          "hidden": false,
+          "id": 2222222222222222,
+          "index": 1,
+          "locked": false,
+          "lockedForUser": false,
+          "options": ["Not Started", "In Progress", "Complete"],
+          "systemColumnType": "",
+          "tags": [],
+          "title": "Status",
+          "type": "PICKLIST",
+          "validation": false,
+          "version": 0,
+          "width": 100
+        }
+      ],
+      "createdAt": "2019-08-24T14:15:22Z",
+      "dependenciesEnabled": false,
+      "effectiveAttachmentOptions": ["BOX", "DROPBOX", "GOOGLE_DRIVE", "ONEDRIVE"],
+      "ganttEnabled": false,
+      "hasSummaryFields": false,
+      "isMultiPicklistEnabled": false,
+      "modifiedAt": "2019-08-24T14:15:22Z",
+      "name": "Test Report",
+      "owner": "test.user@smartsheet.com",
+      "permalink": "https://app.smartsheet.com/reports/test-report",
+      "projectSettings": {
+        "lengthOfDay": 8,
+        "nonWorkingDays": ["2019-12-25"],
+        "workingDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"]
+      },
+      "readOnly": false,
+      "resourceManagementEnabled": false,
+      "resourceManagementType": "NONE",
+      "rows": [
+        {
+          "id": 5555555555555555,
+          "sheetId": 1234567890123456,
+          "siblingId": 0,
+          "accessLevel": "VIEWER",
+          "cells": [
+            {
+              "columnId": 1111111111111111,
+              "rowId": 5555555555555555,
+              "displayValue": "Task 1",
+              "formula": "",
+              "hyperlink": {
+                "reportId": 0,
+                "sheetId": 0,
+                "sightId": 0,
+                "url": ""
+              },
+              "objectValue": {
+                "objectType": "",
+                "value": ""
+              },
+              "strict": false,
+              "value": "Task 1"
+            },
+            {
+              "columnId": 2222222222222222,
+              "rowId": 5555555555555555,
+              "displayValue": "In Progress",
+              "formula": "",
+              "hyperlink": {
+                "reportId": 0,
+                "sheetId": 0,
+                "sightId": 0,
+                "url": ""
+              },
+              "objectValue": {
+                "objectType": "",
+                "value": ""
+              },
+              "strict": false,
+              "value": "In Progress"
+            }
+          ],
+          "columns": [],
+          "createdAt": "2019-08-24T14:15:22Z",
+          "createdBy": {
+            "email": "",
+            "name": ""
+          },
+          "expanded": true,
+          "locked": false,
+          "lockedForUser": false,
+          "modifiedAt": "2019-08-24T14:15:22Z",
+          "modifiedBy": {
+            "email": "",
+            "name": ""
+          },
+          "proof": {
+            "id": 0,
+            "originalId": 0,
+            "type": "",
+            "documentType": "",
+            "proofRequestUrl": "",
+            "version": 0,
+            "lastUpdatedAt": "2019-08-24T14:15:22Z",
+            "lastUpdatedBy": {
+              "email": "",
+              "name": ""
+            },
+            "isCompleted": false
+          },
+          "rowNumber": 1,
+          "version": 0
+        }
+      ],
+      "showParentRowsForFilters": false,
+      "source": {
+        "id": 0,
+        "type": "sheet"
+      },
+      "summary": {
+        "fields": [
+          {
+            "id": 7777777777777777,
+            "contactOptions": [],
+            "createdAt": "2019-08-24T14:15:22Z",
+            "createdBy": {
+              "email": "",
+              "name": ""
+            },
+            "displayValue": "10",
+            "index": 0,
+            "locked": false,
+            "lockedForUser": false,
+            "modifiedAt": "2019-08-24T14:15:22Z",
+            "modifiedBy": {
+              "email": "",
+              "name": ""
+            },
+            "objectValue": {
+              "objectType": "",
+              "value": ""
+            },
+            "title": "Total Tasks",
+            "type": "TEXT_NUMBER",
+            "validation": false
+          }
+        ]
+      },
+      "totalRowCount": 0,
+      "userPermissions": {
+        "summaryPermissions": "VIEWER"
+      },
+      "userSettings": {
+        "criticalPathEnabled": false,
+        "displaySummaryTasks": false
+      },
+      "version": 1,
+      "workspace": {
+        "id": 0,
+        "name": "Test Workspace",
+        "accessLevel": "VIEWER",
+        "permalink": "https://app.smartsheet.com/workspaces/test"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
