@@ -1,7 +1,7 @@
 {
   "request": {
     "urlPathTemplate": "/2.0/reports/{reportId}/definition",
-    "method": "PATCH",
+    "method": "PUT",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"
