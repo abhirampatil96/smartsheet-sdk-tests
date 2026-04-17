@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/favorites/is-favorite/all-response-body-properties"
+        "equalTo": "/favorites/is-favorite/required-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -19,9 +19,7 @@
     "status": 200,
     "jsonBody": {
       "type": "sheet",
-      "objectId": 1234567890,
-      "directId": "pxjX72pQ9Cj8vPqHchrh7xMFqFG7RM5jJJ3MFJM1",
-      "name": "Test Sheet"
+      "objectId": 1234567890
     },
     "headers": {
       "Content-Type": "application/json"
