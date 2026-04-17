@@ -1,0 +1,30 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/favorites/{favoriteType}/{favoriteId}",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/favorites/is-favorite/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "type": "sheet",
+      "objectId": 1234567890123456,
+      "directId": "pxjX72pQ9Cj8vPqHchrh7xMFqFG7RM5jJJ3MFJM1",
+      "name": "Test Sheet"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
