@@ -1,0 +1,40 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/create-report/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      },
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": [
+        {
+          "id": 4583614634583940,
+          "name": "Q2 Earnings",
+          "accessLevel": "OWNER",
+          "permalink": "https://app.smartsheet.com/reports/c8gJxw87cXpRCvCC5PPw6jFhFRrf5r8PxCrxvW21",
+          "isSummaryReport": false
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
