@@ -1,0 +1,37 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/folders/{folderId}/path",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/folders/get-root-folder-path/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "id": 4509918431602564,
+      "name": "Sample Workspace",
+      "permalink": "https://app.smartsheet.com/workspaces/mock_workspace_id",
+      "accessLevel": "OWNER",
+      "folders": [
+        {
+          "id": 5678901234567890,
+          "name": "Root Level Folder",
+          "permalink": "https://app.smartsheet.com/folders/rootlevel"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
