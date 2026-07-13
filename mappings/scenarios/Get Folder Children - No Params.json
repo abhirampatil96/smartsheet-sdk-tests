@@ -47,6 +47,15 @@
           "modifiedAt": "2023-06-12T14:10:45Z",
           "accessLevel": "VIEWER",
           "resourceType": "report"
+        },
+        {
+          "id": 990,
+          "name": "Project Template",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-02-28T16:20:00Z",
+          "modifiedAt": "2023-06-12T14:10:45Z",
+          "accessLevel": "VIEWER",
+          "resourceType": "template"
         }
       ]
     },

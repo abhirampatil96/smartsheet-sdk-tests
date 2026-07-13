@@ -47,6 +47,15 @@
           "modifiedAt": "2023-06-18T17:10:30Z",
           "accessLevel": "ADMIN",
           "resourceType": "report"
+        },
+        {
+          "id": 995,
+          "name": "Budget Template",
+          "permalink": "https://app.smartsheet.com/b/home?lx=*****************",
+          "createdAt": "2023-01-25T08:45:00Z",
+          "modifiedAt": "2023-06-18T17:10:30Z",
+          "accessLevel": "ADMIN",
+          "resourceType": "template"
         }
       ]
     },
