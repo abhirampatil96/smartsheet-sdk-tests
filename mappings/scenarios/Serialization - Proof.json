@@ -1,0 +1,55 @@
+{
+  "request": {
+    "urlPathPattern": "/sheets/1/rows/2\\/?",
+    "method": "GET",
+    "headers": {
+      "Api-Scenario": {
+        "equalTo": "Serialization - Proof"
+      }
+    },
+    "queryParameters": {
+      "include": {
+        "equalTo": "proofs"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "id": 2,
+      "sheetId": 1,
+      "rowNumber": 1,
+      "version": 10,
+      "expanded": true,
+      "accessLevel": "OWNER",
+      "createdAt": "2018-03-16T16:06:52Z",
+      "modifiedAt": "2018-03-16T16:06:52Z",
+      "cells": [
+        {
+          "columnId": 3,
+          "value": "Sample Row with Proof",
+          "displayValue": "Sample Row with Proof"
+        }
+      ],
+      "proof": {
+        "id": 100,
+        "originalId": 100,
+        "name": "Sample Proof Document",
+        "type": "IMAGE",
+        "documentType": "NONE",
+        "proofRequestUrl": "https://app.smartsheet.com/b/proofs/sheets/test123/proofs/proof456",
+        "version": 1,
+        "lastUpdatedAt": "2018-03-16T16:06:52Z",
+        "lastUpdatedBy": {
+          "name": "John Doe",
+          "email": "john.doe@smartsheet.com"
+        },
+        "isCompleted": false
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}
